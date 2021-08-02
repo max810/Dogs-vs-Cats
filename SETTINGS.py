@@ -1,0 +1,2 @@
+DOG_LABEL = 1
+CAT_LABEL = 0
