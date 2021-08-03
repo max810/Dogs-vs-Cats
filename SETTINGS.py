@@ -1,2 +1,5 @@
 DOG_LABEL = 1
 CAT_LABEL = 0
+
+DEVICE = 'cuda'
+BATCH_SIZE = 4

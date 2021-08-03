@@ -47,5 +47,6 @@ dependencies:
   - zlib=1.2.11=h62dcd97_4
   - zstd=1.4.9=h19a0ad4_0
   - pip:
+    - efficientnet-pytorch==0.7.1
     - torchvision==0.10.0
 prefix: C:\Users\maxbe\miniconda3\envs\Dogs_v_Cats
