@@ -3,14 +3,14 @@ from torch.utils.data import DataLoader
 from tqdm import tqdm
 
 from SETTINGS import DEVICE, BATCH_SIZE
-from datasets import ValDataset
+from datasets import CatDogDataset
 from preprocessing import create_imagenet_preprocessing
-# from default_baseline import model as default_baseline_model
-from efficientnet_baseline import model as efficientnet_baseline_model
-from utils.utils import convert_imagenet_to_cat_dog_naive, convert_imagenet_to_cat_dog_sophisticated
+from models.default_baseline import model as default_baseline_model
+from models.efficientnet_baseline import model as efficientnet_baseline_model
+from utils.utils import convert_imagenet_to_cat_dog_sophisticated, convert_imagenet_to_cat_dog_naive
 
-val_dataset = ValDataset('data/split/val', preprocessing=create_imagenet_preprocessing())
-test_dataset = ValDataset('data/split/test', preprocessing=create_imagenet_preprocessing())
+val_dataset = CatDogDataset('data/split/val', preprocessing=create_imagenet_preprocessing())
+test_dataset = CatDogDataset('data/split/test', preprocessing=create_imagenet_preprocessing())
 
 val_dataloader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=0)
 test_dataloader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=0)
@@ -48,10 +48,12 @@ if __name__ == '__main__':
     # run_evaluation('imagenet_default_baseline', default_baseline_model, convert_imagenet_to_cat_dog_naive)
     # run_evaluation('imagenet_default_baseline_direct_probabilities', default_baseline_model,
     #                convert_imagenet_to_cat_dog_sophisticated)
-    run_evaluation('efficientnetb7_baseline', efficientnet_baseline_model, convert_imagenet_to_cat_dog_sophisticated)
+    # run_evaluation('efficientnetb5_baseline', efficientnet_baseline_model, convert_imagenet_to_cat_dog_sophisticated)
+    pass
 
 # TODO
 #  - [+] try EfficientNet baseline (https://github.com/lukemelas/EfficientNet-PyTorch)
 #  - try MobileNetV2 training baseline (no pre-trained weights)
 #  - try fine-tuning with whichever baseline is better
 #  - metric learning
+#  - ensemble

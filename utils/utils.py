@@ -15,7 +15,7 @@ def _convert(idx):
 
 
 def convert_imagenet_to_cat_dog_naive(logprobs):
-    return _convert(logprobs.argmax(axis=1))
+    return _convert(logprobs.argmax(axis=0))
 
 
 def _is_dog(idx):

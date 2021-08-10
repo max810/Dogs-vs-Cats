@@ -1,5 +1,4 @@
 experiment,val_accuracy,test_accuracy
-imagenet_default_baseline,0.97,0.9716
-imagenet_default_baseline_direct_probabilities,0.9732,0.9728
-efficientnetb5_baseline,0.9612,0.9588
-efficientnetb7_baseline,0.9648,0.9616
+imagenet_default_baseline,0.9688,0.9688
+imagenet_default_baseline_direct_probabilities,0.9724,0.9716
+efficientnetb5_baseline,0.9572,0.9548
