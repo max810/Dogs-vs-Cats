@@ -40,7 +40,7 @@ def run_evaluation(experiment_name: str, model, prediction_preprocessing):
 
     print(f"Validation accuracy for {experiment_name}: {val_acc:.3f}")
     print(f"Test accuracy for {experiment_name}: {test_acc:.3f}")
-    with open('results/metrics.csv', 'at') as f:
+    with open('results/metrics2.csv', 'at') as f:
         f.write(f'{experiment_name},{val_acc},{test_acc}\n')
 
 
@@ -56,4 +56,5 @@ if __name__ == '__main__':
 #  - try MobileNetV2 training baseline (no pre-trained weights)
 #  - try fine-tuning with whichever baseline is better
 #  - metric learning
-#  - ensemble
+#  - ensemble (maybe train multiple models with different augmentations AND/OR different train/test splits?)?
+#  - TTA

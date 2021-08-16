@@ -1,3 +1,5 @@
+import torch
+
 from SETTINGS import CAT_LABEL, DOG_LABEL
 
 DOG_FROM = 151
@@ -38,3 +40,8 @@ def convert_imagenet_to_cat_dog_sophisticated(probs):
     max_idx = max(dog_cat_logprobs.keys(), key=(lambda key: dog_cat_logprobs[key]))
 
     return _convert(max_idx)
+
+
+def convert_binary_logits_to_cat_dog(probs):
+    class_idx = torch.argmax(probs)
+    return int(class_idx)

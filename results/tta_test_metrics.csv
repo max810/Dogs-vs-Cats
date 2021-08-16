@@ -1,0 +1,5 @@
+experiment,test_accuracy
+
+resnext50_colab,0.974
+resnext50_colab,0.976
+resnext50_colab,0.9852

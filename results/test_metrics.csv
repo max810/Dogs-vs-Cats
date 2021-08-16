@@ -1,0 +1,6 @@
+experiment,test_accuracy
+resnext50_colab,0.99
+mobilenetv2_colab,0.9876
+mobilenetv2_local,0.9704
+imagenet_default_baseline,0.9728
+efficientnetb5_baseline,0.9436
